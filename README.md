@@ -5,7 +5,7 @@ This component is based on the react-simple-countdown created by Leonidas Esteba
 ## install
 
 ```bash
-npm install react-simple-countdown --save
+npm install react-countdown-custom-labels --save
 ```
 ## How to use
 
