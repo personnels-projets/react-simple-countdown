@@ -1,6 +1,6 @@
 # react-simple-countdown
-A simple countdown component with React 16
-
+A simple countdown component with React 16. 
+This component is based on the react-simple-countdown created by Leonidas Esteban. https://www.npmjs.com/package/react-simple-countdown
 
 ## install
 
@@ -11,7 +11,7 @@ npm install react-simple-countdown --save
 
 import component:
 ```javascript
-import CountDown from 'react-simple-countdown';
+import CountDown from 'react-countdown-custom-labels';
 ```
 
 ## Props
@@ -24,7 +24,7 @@ Custom component class
 ``` javascript
 import React from 'react';
 import { render } from 'react-dom';
-import CountDown from 'react-simple-countdown';
+import CountDown from 'react-countdown-custom-labels';
 
 function finish() {
   console.log('Countdown finished');

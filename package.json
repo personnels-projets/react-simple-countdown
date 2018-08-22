@@ -1,6 +1,6 @@
 {
   "name": "react-countdown-custom-labels",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A simple countdown component for react 16 with cutom labels for countdown sections",
   "main": "dist/index.js",
   "scripts": {
