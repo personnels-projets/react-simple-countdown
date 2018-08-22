@@ -1,26 +1,26 @@
 {
-  "name": "react-simple-countdown",
-  "version": "1.2.1",
-  "description": "A simple countdown component",
+  "name": "react-countdown-custom-labels",
+  "version": "2.0.1",
+  "description": "A simple countdown component for react 16 with cutom labels for countdown sections",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel ./source/index.jsx --out-file ./dist/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leonidasesteban/react-simple-countdown.git"
+    "url": "https://github.com/rhpereda/react-simple-countdown.git"
   },
   "keywords": [
     "react",
     "countdown",
     "es6"
   ],
-  "author": "Leonidas Esteban <leonidasesteban@gmail.com> (http://leonidasesteban.com)",
+  "author": "Reiniel Herrera Pereda <rhpereda@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leonidasesteban/react-simple-countdown/issues"
+    "url": "https://github.com/rhpereda/react-simple-countdown/issues"
   },
-  "homepage": "https://github.com/leonidasesteban/react-simple-countdown",
+  "homepage": "https://github.com/rhpereda/react-simple-countdown",
   "dependencies": {
     "react": "^16.4.2",
     "prop-types": "15.6.2"
