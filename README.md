@@ -1,5 +1,5 @@
 # react-simple-countdown
-A simple countdown component with React &lt;3
+A simple countdown component with React 16
 
 
 ## install

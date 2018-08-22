@@ -1,7 +1,5 @@
-import React, {
-  Component,
-  PropTypes,
-} from 'react';
+import React, { Component, } from 'react';
+import PropTypes from 'prop-types';
 
 class CountDown extends Component {
   static displayName = 'Simple countDown';
