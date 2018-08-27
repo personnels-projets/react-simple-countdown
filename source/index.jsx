@@ -1,36 +1,7 @@
-import React, { Component, } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class CountDown extends Component {
-  static displayName = 'Simple countDown';
-  static propTypes = {
-    date: PropTypes.string,
-    className: PropTypes.string,
-    days: PropTypes.objectOf(PropTypes.string),
-    hours: PropTypes.string,
-    mins: PropTypes.string,
-    segs: PropTypes.string,
-    onEnd: PropTypes.func,
-  };
-  static defaultProps = {
-    date: new Date(),
-    className: 'CountDown',
-    days: {
-      plural: 'Days',
-      singular: 'Day',
-    },
-    hours: 'Hours',
-    mins: 'Min',
-    segs: 'Seg',
-    onEnd: () => {},
-
-  };
-  state = {
-    days: 0,
-    hours: 0,
-    min: 0,
-    sec: 0,
-  };
+class CountDown extends React.Component {
   componentDidMount() {
     this.interval = setInterval(()=> {
       const date = this.getDateData(this.props.date);
@@ -49,6 +20,7 @@ class CountDown extends Component {
     }
 
   }
+
   componentWillUnmount() {
     this.stop();
   }
@@ -87,6 +59,11 @@ class CountDown extends Component {
     timeLeft.sec = diff;
     return timeLeft;
   }
+
+  getSeparator () {
+    return <div className="countdown-separator"><span>:</span></div>
+  }
+
   render() {
     const countDown = this.state;
     let days;
@@ -98,18 +75,25 @@ class CountDown extends Component {
     return (
       <div className={this.props.className}>
         {(countDown.days > 0) &&
-          <div className={`${this.props.className}-col is-day`}>
-            <p><strong>{this.leadingZeros(countDown.days)}</strong><span>{days}</span></p>
-          </div>
+        <div className={`${this.props.className}-col is-day`}>
+          <p><strong>{this.leadingZeros(countDown.days)}</strong></p>
+          <span className="countdown-time-labels">{days}</span>
+        </div>
         }
+        { this.getSeparator() }
         <div className={`${this.props.className}-col is-hour`}>
-          <p><strong>{this.leadingZeros(countDown.hours)}</strong><span>{this.props.hours}</span></p>
+          <p><strong>{this.leadingZeros(countDown.hours)}</strong></p>
+          <span className="countdown-time-labels">{this.props.hours}</span>
         </div>
+        { this.getSeparator() }
         <div className={`${this.props.className}-col is-min`}>
-          <p><strong>{this.leadingZeros(countDown.min)}</strong><span>{this.props.mins}</span></p>
+          <p><strong>{this.leadingZeros(countDown.min)}</strong></p>
+          <span className="countdown-time-labels">{this.props.mins}</span>
         </div>
+        { this.getSeparator() }
         <div className={`${this.props.className}-col is-seg`}>
-          <p><strong>{this.leadingZeros(countDown.sec)}</strong><span>{this.props.segs}</span></p>
+          <p><strong>{this.leadingZeros(countDown.sec)}</strong></p>
+          <span className="countdown-time-labels">{this.props.segs}</span>
         </div>
       </div>
     );
@@ -131,5 +115,36 @@ class CountDown extends Component {
     return num_;
   }
 };
+
+CountDown.propTypes = {
+  date: PropTypes.string,
+  className: PropTypes.string,
+  days: PropTypes.objectOf(PropTypes.string),
+  hours: PropTypes.string,
+  mins: PropTypes.string,
+  segs: PropTypes.string,
+  onEnd: PropTypes.func,
+};
+
+CountDown.defaultProps = {
+  date: new Date(),
+  className: 'CountDown',
+  days: {
+    plural: 'Days',
+    singular: 'Day',
+  },
+  hours: 'Hours',
+  mins: 'Min',
+  segs: 'Seg',
+  onEnd: () => {},
+};
+
+CountDown.state = {
+  days: 0,
+  hours: 0,
+  min: 0,
+  sec: 0,
+};
+CountDown.displayName = 'Simple countDown';
 
 export default CountDown;
